@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+#root {
+  max-width: 1280px;
+  padding: 2rem;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  max-height: 150vh;
+}
+
+.project-card {
+  margin: 5px;
+  max-width: 200px;
+}
+
+.project-image {
+  width: 100%; 
+  height: auto; 
+}
