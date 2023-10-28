@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ShopItem = ({ product }) => {
   return (
     <div className="list-view-item">
@@ -9,5 +11,9 @@ const ShopItem = ({ product }) => {
     </div>
   );
 }
+
+ShopItem.propTypes = {
+  product: PropTypes.object.isRequired,
+};
 
 export default ShopItem;

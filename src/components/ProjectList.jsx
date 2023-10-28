@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ProjectList = ({ projects }) => {
     return (
       <div className="project-list">
@@ -10,4 +12,8 @@ const ProjectList = ({ projects }) => {
     );
   }
 
+  ProjectList.propTypes = {
+    projects: PropTypes.object.isRequired,
+  };
+  
   export default ProjectList;

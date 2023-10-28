@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const ShopCard = ({ product }) => {
   return (
     <div className="shop-card">
@@ -11,5 +13,9 @@ const ShopCard = ({ product }) => {
     </div>
   );
 }
+
+ShopCard.propTypes = {
+  product: PropTypes.object.isRequired,
+};
 
 export default ShopCard;
