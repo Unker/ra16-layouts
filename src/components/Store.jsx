@@ -5,16 +5,14 @@ import products from '../assets/products.json'
 // import Toolbar from './Toolbar';
 // import ProjectList from './ProjectList';
 
-class IconSwitch extends Component {
-  render() {
-    return (
-      <div className="icon-switch">
-        <i className="material-icons" onClick={this.props.onSwitch}>
-          {this.props.icon}
-        </i>
-      </div>
-    );
-  }
+const IconSwitch = ({ icon, onSwitch }) => {
+  return (
+    <div className="icon-switch">
+      <span className="material-icons" onClick={() => onSwitch()}>
+        {icon}
+      </span>
+    </div>
+  );
 }
 
 class CardsView extends Component {
@@ -48,10 +46,13 @@ class ShopCard extends Component {
     const { product } = this.props;
     return (
       <div className="shop-card">
-        <img src={product.img} alt={product.name} />
-        <h2>{product.name}</h2>
-        <p>Price: {product.price}</p>
-        <p>Color: {product.color}</p>
+        <div className="shop-card-image">
+          <img src={product.img} alt={product.name} />
+          <h2 className="shop-card-title">{product.name}</h2>
+          <p className="shop-card-color">{product.color}</p>
+          <p className="shop-card-price">${product.price}</p>
+          <button className="add-to-cart-button">Add to Cart</button>
+        </div>
       </div>
     );
   }
@@ -76,6 +77,7 @@ class Store extends Component {
     this.state = {
       viewType: 'cards', // Изначально установим вид на карточки
     };
+    this.products = products;
   }
 
   handleSwitchView = () => {
@@ -92,9 +94,9 @@ class Store extends Component {
       <div className="store">
         <IconSwitch icon={icon} onSwitch={this.handleSwitchView} />
         {viewType === 'cards' ? (
-          <CardsView cards={products} />
+          <CardsView cards={this.products} />
         ) : (
-          <ListView items={products} />
+          <ListView items={this.products} />
         )}
       </div>
     );

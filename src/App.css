@@ -5,20 +5,85 @@
   padding: 2rem;
 }
 
-.project-list {
+.store {
+  position: relative;
+}
+
+.cards-view {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  flex-direction: column;
-  max-height: 150vh;
 }
 
-.project-card {
+.shop-card {
   margin: 5px;
-  max-width: 200px;
+  width: 300px;
 }
 
-.project-image {
-  width: 100%; 
-  height: auto; 
+.shop-card-image {
+  position: relative;
+  text-align: center;
+  width: inherit;
+  height: inherit;
+}
+
+.shop-card-title {
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px;
+  text-transform: uppercase;
+  transform: scale(0.6, 1);
+  font-weight: 400;
+}
+
+.shop-card-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  padding: 5px;
+  transform: scale(0.6, 1);
+  font-weight: 400;
+  color: red;
+}
+
+.shop-card-color {
+  position: absolute;
+  font-size: 0.8rem;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px;
+  transform: scale(0.6, 1);
+  font-weight: 400;
+}
+
+.add-to-cart-button {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  background: inherit;
+  color: red;
+  border: solid 1px;
+  border-radius: 30px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background: lightgrey;
+  border-color: inherit;
+}
+
+.shop-card-image img {
+  width: inherit;
+  height: auto;
+}
+
+.material-icons {
+  color: dimgray;
 }
